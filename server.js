@@ -35,8 +35,8 @@ app.use((req, res, next) => {
 });
 
 // Route definieren, die "test" zurückgibt
-app.get('/api/test', (req, res) => {
-  const result = connectToDatabase();
+app.get('/api/test', async (req, res) => {
+  const result = await connectToDatabase();
   console.log(result);
   res.send(result);
   //res.send('test');
